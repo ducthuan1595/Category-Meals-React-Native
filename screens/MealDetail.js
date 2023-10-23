@@ -11,20 +11,32 @@ import {
 import { MEALS } from "../data/dummy-data";
 import MealsDetail from "../components/MealsDetail";
 import IconButton from "../components/IconButton";
+import { FavoriteState } from "../store/context/favorites";
 
 function MealDetail({ route, navigation }) {
+  const { addFavorite, removeFavorite, ids } = FavoriteState();
   const mealId = route.params.mealId;
   const selectedMeal = MEALS.find((m) => m.id === mealId);
 
+  const mealFavorite = ids.includes(mealId);
+
   const headerButton = () => {
-    console.log("tap");
+    if (mealFavorite) {
+      removeFavorite(mealId);
+    } else {
+      addFavorite(mealId);
+    }
   };
 
   useLayoutEffect(() => {
     navigation.setOptions({
       headerRight: () => {
         return (
-          <IconButton onPress={headerButton} icon={"star"} color={"blue"} />
+          <IconButton
+            onPress={headerButton}
+            icon={mealFavorite ? "star" : "star-outline"}
+            color={"blue"}
+          />
         );
       },
     });
@@ -77,6 +89,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
     fontSize: 24,
     margin: 8,
+    color: "#fff",
   },
   subtitle: {
     fontSize: 18,
@@ -86,13 +99,14 @@ const styles = StyleSheet.create({
     textAlign: "center",
     borderBottomColor: "white",
     borderBottomWidth: 2,
+    color: "#fff",
   },
   listItem: {
     borderRadius: 6,
     paddingHorizontal: 8,
     paddingVertical: 4,
     marginVertical: 8,
-    marginHorizontal: 12,
+    marginHorizontal: 32,
     backgroundColor: "#e2b497",
   },
   itemText: {

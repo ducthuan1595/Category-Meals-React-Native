@@ -22,6 +22,7 @@ const styles = StyleSheet.create({
   },
   detailsItem: {
     marginHorizontal: 4,
+    color: "#fff",
     fontSize: 12,
   },
 });

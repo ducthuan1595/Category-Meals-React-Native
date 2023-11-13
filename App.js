@@ -20,7 +20,7 @@ const DrawerNavigator = () => {
       screenOptions={{
         headerStyle: { backgroundColor: "#351401" },
         headerTintColor: "#fff",
-        sceneContainerStyle: { backgroundColor: "3f2f25" },
+        sceneContainerStyle: { backgroundColor: "#3f2f25" },
         drawerContentStyle: { backgroundColor: "#351401" },
         drawerInactiveTintColor: "#fff",
         drawerActiveTintColor: "#351401",
@@ -59,7 +59,7 @@ export default function App() {
             screenOptions={{
               headerStyle: { backgroundColor: "#351401" },
               headerTintColor: "#fff",
-              contentStyle: { backgroundColor: "3f2f25" },
+              contentStyle: { backgroundColor: "#3f2f25" },
             }}
           >
             <Stack.Screen

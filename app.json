@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "categories-meal",
+    "name": "Category Meal",
     "slug": "categories-meal",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -12,18 +12,29 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
     "assetBundlePatterns": ["**/*"],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "buildNumber": "1.0.0"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "versionCode": 1,
+      "package": "com.thuanthien.categoriesmeal"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "e6e5d60b-5388-4e96-a0fd-a906080cfe06"
+      }
     }
   }
 }
